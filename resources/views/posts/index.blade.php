@@ -13,12 +13,14 @@
                 <div class='post'>
                     <h2 class='title'><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
                     <p class='body'>{{ $post->body }}</p>
-                    <p class='date'>{{ $post->created_at}}</p>
+                    <p class='date'>日付：{{ $post->created_at}}</p>
                 </div>
             @endforeach
         </div>
+        
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        <a href='/posts/create'>create</a>
     </body>
 </html>
