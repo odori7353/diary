@@ -7,7 +7,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body>
+        <small>{{ $post->user->name }}</small>
         <h1 class="title">
             {{ $post->title }}
         </h1>
@@ -17,9 +19,12 @@
                 <p>{{ $post->body }}</p>    
             </div>
         </div>
+        
+     <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <div class="footer">
             <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
             <a href="/">戻る</a>
         </div>
     </body>
+    </x-app-layout>
 </html>

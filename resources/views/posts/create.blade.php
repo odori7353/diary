@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>日記内容</title>
     </head>
+    <x-app-layout>
     <body>
         <h1>日記</h1>
         <form action="/posts" method="POST">
@@ -18,10 +19,19 @@
                 <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
             </div>
+            <div class="category">
+                <h2>Category</h2>
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <input type="submit" value="保存"/>
         </form>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
     </body>
+    </x-app-layout>
 </html>

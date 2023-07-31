@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body>
     <h1 class="title">編集画面</h1>
     <div class="content">
@@ -24,4 +25,5 @@
         </form>
     </div>
 </body>
+</x-app-layout>
 </html>
