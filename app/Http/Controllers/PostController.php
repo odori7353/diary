@@ -7,6 +7,10 @@ use App\Models\Post;
 use App\Http\Requests\PostRequest; // useする
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Comments;
+
+
+
 
 
 class PostController extends Controller
@@ -38,6 +42,11 @@ class PostController extends Controller
             return view('posts.edit')->with(['post' => $post]);
         }
         
+        public function calendar(Post $post)
+        {
+            return view('posts.calendar');
+        }
+        
         public function update(PostRequest $request, Post $post)
         {
             $input_post = $request['post'];
@@ -57,11 +66,5 @@ class PostController extends Controller
             return view('posts.create')->with(['categories' => $category->get()]);
         }
         
-        public function comments()
-        {
-            return view('posts.comments');
-        }
-        
-        
-        
+       
     }
