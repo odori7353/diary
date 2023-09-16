@@ -5,7 +5,10 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
+        テストアカウント
+        <br>
+        Email:test_user2@gmail.com<br>
+        Password:Password
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -45,10 +48,12 @@
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
-        </div>
-           
+            
+            <x-primary-button>
                  <a href="{{ route('register') }}">register</a><br>
-                
+            </x-primary-button>
+        </div>
+               
     </form>
    
 </x-guest-layout>

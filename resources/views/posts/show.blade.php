@@ -6,6 +6,7 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script>"/diary/resources/js/like.js"</script>
     </head>
     <x-app-layout>
     <body>
@@ -17,8 +18,10 @@
             <div class="content__post">
                 <h3>本文</h3>
                 <p>{{ $post->body }}</p>    
+                <p>日付：{{ $post->created_at}}</p>
             </div>
         </div>
+        <button onclick="like({{$post->id}})">いいね</button>
         
      <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         <div class="footer">

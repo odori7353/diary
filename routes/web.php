@@ -40,6 +40,9 @@ Route::middleware('auth')->group(function () {
     
 });
 
+Route::post('/like/{postId}',[LikeController::class,'store']);
+Route::post('/unlike/{postId}',[LikeController::class,'destroy']);
+
 Route::get('/user/{user}', [UserController::class,'index']);
 //Route::get('//{user}', [UserController::class,'index']);
 
