@@ -7,7 +7,7 @@ use App\Models\Post;
 use App\Http\Requests\PostRequest; // useする
 use App\Models\Category;
 use App\Models\User;
-use App\Models\Comments;
+use App\Models\Comment;
 
 
 
@@ -57,6 +57,7 @@ class PostController extends Controller
         
         public function delete(Post $post)
         {
+            dd($post);
             $post->delete();
             return redirect('/');
         }
@@ -65,6 +66,18 @@ class PostController extends Controller
         {
             return view('posts.create')->with(['categories' => $category->get()]);
         }
-        
+          
+       public function commentcreate(Post $post)
+       {
+           return view('posts.comments')->with(['posts' => $posts->getBy()]);
+       }
        
+       public function commentstore(Request $request, Comment $comment)
+       {
+        $input = $request['comment'];
+        $input += ['user_id' => $request->user()->id];
+                $comment->fill($input)->save();
+            return redirect('/posts/' . $post->id);
+           //return view('posts.comments');
+       }
     }

@@ -6,12 +6,13 @@
     </head>
     <x-app-layout>
     <body>
-        <form action="/posts" method="POST">
+        <form action="/posts/comments" method="POST">
             @csrf
             
             <div class="body">
                 <h2>コメント</h2>
                 <textarea name="comment[body]" placeholder="コメントを記入"></textarea>
+                <input type='hidden' name='comment[post_id]' value="1"/>
                 <p class="body__error" style="color:red">{{ $errors->first('comment.body') }}</p>
             </div>
             

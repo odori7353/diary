@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 //use Illuminate\Database\Eloquent\Factories\HasFactory;
 //use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
 use Auth;
@@ -15,6 +16,7 @@ class Comment extends Model
 {
     protected $fillable = [
         'body',
+        'post_id'
         //'article_id',
         //'user_id',
     ];

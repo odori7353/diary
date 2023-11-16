@@ -17,7 +17,8 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::post('/posts', 'store')->name('store');
     Route::get('/posts/create', 'create')->name('create');
     Route::get('/posts/calendar', 'calendar')->name('calendar');
-    //Route::post('/posts/comments', 'commentstore')->name('commentstore');
+    Route::get('/posts/comments/{posts}', 'commentcreate')->name('commentcreate');
+    Route::post('/posts/comments/', 'commentstore')->name('commentstore');
     Route::get('/posts/{post}', 'show')->name('show');
     Route::put('/posts/{post}', 'update')->name('update');
     Route::delete('/posts/{post}', 'delete')->name('delete');

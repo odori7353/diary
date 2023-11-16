@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        
         <title>日記内容</title>
     </head>
     <x-app-layout>

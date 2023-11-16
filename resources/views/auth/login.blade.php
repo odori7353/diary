@@ -1,6 +1,10 @@
 <x-guest-layout>
     <!-- Session Status -->
-    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+        <script src="https://cdn.tailwindcss.com"></script>
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
