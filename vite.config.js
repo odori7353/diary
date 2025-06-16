@@ -11,4 +11,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        https: false,     // ← これを追加
+        host: 'localhost',
+        port: 5173        // デフォルトポート (任意、指定しなくてもOK)
+    },
 });
